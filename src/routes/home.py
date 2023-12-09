@@ -1,11 +1,11 @@
 from flask import Blueprint
 
-routes = Blueprint('routes', __name__)
+home = Blueprint('home', __name__)
 
-@routes.route("/")
+@home.route("/")
 def index():
     return "Hello, this is the main page!"
 
-@routes.route("/about")
+@home.route("/about")
 def about():
     return "This is the about page!"
