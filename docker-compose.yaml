@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  app:
+    image: python-flask-rest-api-example:0.0.1
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    environment:
+      # Main file
+      - FLASK_APP=main
+      # Develpment mode
+      - FLASK_ENV=development
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=5000
+    # tty: true
+    entrypoint: [ "flask", "run" ]
+    volumes:
+      - ./src:/home/python/src
